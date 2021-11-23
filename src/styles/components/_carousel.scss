@@ -1,0 +1,27 @@
+.item__carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.item__carousel h1 {
+    font-size: 45px;
+    color: $primary;
+}
+
+.card__item {
+    width: 70%;
+}
+
+@media screen and (max-width:668px) {
+    .card__item {
+        width: 90%;
+    }
+
+    .item__carousel h1 {
+        font-size: 18px;
+    }
+}

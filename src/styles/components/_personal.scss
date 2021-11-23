@@ -1,0 +1,106 @@
+.container__personal {
+    background-image: url('../../img/personal.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+@media screen and (min-width: 768px) {
+    .container__personal {
+        height: 100vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container__personal {
+       padding: 1rem;
+    }
+}
+
+.grid__personal {
+    display: grid;
+    grid-template-columns: repeat(minmax(auto-fit, 1fr));
+
+    & .bx__personal-bx1 {
+
+        & .bx__personal,h2 {
+            font-size: 25px;
+        }
+
+        & .line__personal {
+            background-color: #ddd;
+            height: 2px;
+            width: 35%;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    & .bx__personal,h2,li {
+        color: #fff;        
+    }
+
+    .bx__personal-bx2 li {
+        margin-bottom: 2rem;
+     }
+
+    & .bx__personal-bx2 {
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (min-width: 1250px) {
+    & .bx__personal,h2 {
+        font-size: 30px !important;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    & .bx__personal,h2 {
+        font-size: 20px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    & .bx__personal,h2 {
+        font-size: 18px !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .grid__personal {
+        grid-template-columns: repeat(2, 1fr);
+
+        & .bx__personal-bx1 {
+            width: 80%;
+            margin: 0 auto;
+    
+            & .bx__personal,h2 {
+                font-size: 25px;
+                text-align: left;
+            }
+            
+        }
+
+        & .bx__personal-bx2 ul {
+            width: 80%;
+        }
+    }
+    
+}
+
+@media screen and (min-width: 568px) {
+    .bx__personal-bx2 li {
+        font-size: 18px;
+     }
+}
+
+@media screen and (max-width: 568px) {
+    .bx__personal-bx2 li {
+        font-size: 14px;
+     }
+}

@@ -1,0 +1,122 @@
+
+.container__grid__section-2 {
+    display: grid;
+    grid-template-columns: repeat(minmax(auto-fit, 1fr));
+
+    & .bx__section-2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 1rem;
+
+        & h3 {
+            color: $primary;
+            font-size: 20px;
+        }
+
+        & .acerca__img {
+            width: 100%;
+            height: 100%;
+        }
+
+        & p {
+            margin-top: 1rem;
+            color: #212f3d;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 28px;
+        }
+
+        & li {
+            margin-top: 10px;
+            color:  #566573;
+            font-weight: 800;
+        }
+    }
+}
+
+.bx__section-2 {
+    & ul {
+        padding: 1rem;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    .bx__section-2 {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 1rem;
+
+        & h3 {
+            color: $primary;
+            font-size: 20px;
+        }
+
+    }
+}
+
+@media screen and (min-width: 1021px) {
+
+    .container__section-two {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container__grid__section-2 {
+        grid-template-columns: repeat(3, 1fr);
+        width: 90%;
+        margin: 0 auto;
+
+        & .one {
+            padding: 1rem;
+            align-items: flex-start;
+        }
+
+    }
+    
+}
+
+@media screen and (max-width: 1021px) {
+    & .acerca__img {
+        width: 50% !important;
+        height: 100%;
+    }
+}
+
+
+
+@media screen and (max-width: 578px) {
+    & h3 {
+        font-size: 15px !important;
+    }
+
+    & p {
+        font-size: 14px !important;
+        text-align: justify;
+    }
+
+    & .acerca__img {
+        width: 100% !important;
+    }
+    & li {
+        font-size: 13px;
+    }
+}
+
+
+@media screen and (max-width: 440px) {
+
+    .container__grid__section-2 {
+    }
+
+}
+
+@media screen and (max-width: 340px) {
+    .container__grid__section-2 {
+    }
+
+}

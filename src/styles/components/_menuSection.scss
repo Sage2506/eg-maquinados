@@ -1,0 +1,175 @@
+.container__home{
+    background-image: url('../../img/fondo-menu.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.home__app {
+    display: grid;
+    grid-template-columns: repeat(minmax(auto-fit, 1fr));
+    & .txt__home h1 {
+        font-weight: 900;
+        color: #fff;
+    }
+
+    & .txt__home h3 {
+        color: #fff;
+        font-weight: lighter;
+    }
+
+    & .img-home {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px ) {
+    .home__app {
+    }
+    .img-home {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .img__home {
+       display: flex;
+       justify-content: flex-end;
+    }
+    .img-home {
+        width: 70% !important;
+    }
+}
+
+@media screen and (min-width: 1178px) {
+    .home__app {
+        height: 100vh;
+    }
+
+    .txt__home {
+        padding: 5rem !important;
+    }
+
+    & .img-home {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 1rem;
+        bottom: -1;
+    }
+}
+
+@media screen and (max-width: 1178px) {
+    .img__home{
+    }
+}
+
+@media screen and (min-width: 878px) {
+    .home__app {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    & .txt__home {
+        padding: 1rem;
+    }
+    & .txt__home-text {
+        height: 70%;
+        width: 100%;
+    }
+
+    & .img-home {
+        width: 100%;
+    }
+
+    & .container__home{
+        height: 100vh;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .txt__home {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+
+@media screen and (min-width: 1524px) {
+
+    & .txt__home-text {
+        height: 70%;
+        width: 70%;
+    }
+
+    .txt__home h1 {
+        font-size: 80px !important;
+     }
+ 
+     .txt__home h3 {
+         color: #fff;
+         font-weight: lighter;
+     }
+}
+
+@media screen and (max-width: 880px) {
+    .container__home{
+    }
+    .txt__home h1 {
+        text-align: center;
+    }
+    .txt__home h3 {
+        text-align: center;
+        
+    }
+}
+
+@media screen and (max-width: 578px) {
+    .container__home{
+    }
+
+    .mobil__sect {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    & .txt__home h1 {
+        font-size: 30px;
+        margin-right: 5px;
+
+    }
+
+    & .txt__home h3 {
+        font-size: 20px;
+
+    }
+}
+
+@media screen and (max-width: 378px) {
+    
+    & .txt__home h1 {
+        font-size: 30px;
+
+    }
+
+    & .txt__home h3 {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 578px) {
+    & .txt__home h1 {
+        font-size: 60px;
+    }
+
+    & .txt__home h3 {
+        font-size: 30px;
+    }
+}
+
+.img__home {
+    position: relative;
+}
+

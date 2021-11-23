@@ -1,0 +1,45 @@
+
+/*
+
+import {  makeStyles } from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/styles';
+import React, {useState} from 'react';
+import NavBar from './components/NavBar';
+import Ocult from './components/Ocult';
+import { SectionOne } from './maquinados/SectionOne';
+import theme from './themeConfig';
+
+const styles = makeStyles(theme => ({
+  root: {
+    display: 'flex'
+  },
+  toolbar: theme.mixins.toolbar,
+  content: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.default,
+    padding: theme.spacing(0),
+  }
+}))
+
+function App() {
+
+  const classname = styles();
+
+  return (
+    <ThemeProvider theme={theme}>
+      <main>
+        <NavBar />
+
+        <div className={classname.content}>
+          <div className={classname.toolbar}>
+           
+          </div>
+        </div>
+      </main>
+      <Ocult />
+    </ThemeProvider>
+  );
+}
+
+export default App;
+*/

@@ -1,0 +1,19 @@
+* {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0px;
+} 
+
+p {
+    line-height: 23px;
+}
+
+@media screen and (max-width: 568px) {
+    p {
+        font-size: 12px !important;
+    }
+    li {
+        font-size: 12px !important;
+    }
+}
+
+$primary: #100056;

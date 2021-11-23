@@ -1,0 +1,47 @@
+
+
+@media screen and (max-width: 1120px) {
+    .nav__bar {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 596px) {
+    .bx {
+        display: none;
+    }
+    .logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 896px) {
+
+    .logo {
+        display: none;
+    }
+}
+.fab {
+    font-size: 45px;
+    cursor: pointer;
+    color: #fff;
+    margin-left: 1rem;
+}
+
+.logo {
+    width: 5%;
+}
+
+@media screen and (min-width: 596px) {
+    .nav__bar {
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 1rem;
+    }
+    .nav__bar .btns{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+

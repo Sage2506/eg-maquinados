@@ -32,7 +32,7 @@ if(isset($_POST['send']))
             $mail->From       = "barryallen@egmaquinados.com";
             $mail->FromName   = "EG Maquinados: $name";
 
-            $mail->AddAddress("d.cortesjoel@gmail.con");
+            $mail->AddAddress("d.cortesjoel@gmail.com");
             $mail->Subject  = $subject;
             $mail->WordWrap   = 80;
 

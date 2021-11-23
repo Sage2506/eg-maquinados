@@ -23,15 +23,15 @@ export const Footer = () => {
                 <div className="bx__footer-links">
                     <ul className="bx__contact-phone">
                         <li>
-                            Tel oficina: 
+                            Tel oficina:
                             <a href="tel:664-880-3571">664-880-3571</a>
                         </li>
                         <li>
-                            Edgar Garduño: 
+                            Edgar Garduño:
                             <a href="tel:663-211-5423">663-211-5423</a>
                         </li>
                         <li>
-                            Emilio Garduño: 
+                            Emilio Garduño:
                             <a href="tel:663-211-5423">664-669-4274</a>
                         </li>
                     </ul>

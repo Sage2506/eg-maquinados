@@ -1,27 +1,56 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import axios from 'axios';
 
 export default class SectionContact extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        name:'',
-        mail:'',
-        phone:'',
-        subject:'',
-        msg:''
+          contact : {
+              send: true,
+              name:'',
+              email:'',
+              phone:'',
+              subject:'',
+              message:''
+        },
+        emailError : ''
       }
     }
     handleSubmit = () => {
-        console.log('form submit:' , this.state)
+        const pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+        if(!pattern.test(this.state.contact.email)){
+            this.setState({ emailError: 'Formato de correo incorrecto'})
+        } else {
+            this.setState({ emailError: ''})
+            axios.post('/send.php',this.state.contact).then( response => {
+                if(response.data.sent){
+                    alert("¡Correo enviado, en breve nos contactaremos contigo!")
+                    this.setState({contact : {
+                        send: true,
+                        name:'',
+                        email:'',
+                        phone:'',
+                        subject:'',
+                        message:''}})
+                }
+            })
+
+        }
     }
     handleInputChange = e => {
-        this.setState({ [e.target.name] : e.target.value})
+        switch(e.target.name){
+            case 'phone': if( e.target.value.length < 11 ) { this.setState({ contact : { ...this.state.contact, [e.target.name] : e.target.value }}) }
+                break;
+            default:
+                this.setState({ contact : { ...this.state.contact, [e.target.name] : e.target.value }})
+        }
     }
     render() {
         const { handleInputChange } = this
-        const {name, mail, phone, subject, msg} = this.state
+        const {contact, emailError} = this.state
+        const {name, email, phone, subject, message} = contact
         return (
             <section className="main__contact" id="informacion">
                 <div className="container__grid-contact">
@@ -81,8 +110,10 @@ export default class SectionContact extends Component {
                                     label="Correo"
                                     variant="filled"
                                     className="input__text"
-                                    name="mail"
-                                    value={mail}
+                                    name="email"
+                                    value={email}
+                                    error={emailError !== '' }
+                                    helperText={emailError}
                                     onChange={handleInputChange}
                                 />
                                 <TextField
@@ -93,6 +124,8 @@ export default class SectionContact extends Component {
                                     variant="filled"
                                     className="input__text"
                                     name="phone"
+                                    maxLength="10"
+                                    type="number"
                                     value={phone}
                                     onChange={handleInputChange}
                                 />
@@ -110,8 +143,8 @@ export default class SectionContact extends Component {
                                 <textarea
                                     aria-label="maximum height"
                                     className="input__text-area"
-                                    name="msg"
-                                    value={msg}
+                                    name="message"
+                                    value={message}
                                     onChange={handleInputChange}
                                 />
                                 <Button
@@ -120,6 +153,7 @@ export default class SectionContact extends Component {
                                     size="medium"
                                     className="submit__btn"
                                     onClick={this.handleSubmit}
+                                    disabled={ name === '' || email === '' || phone === '' || subject === '' || message === '' }
                                 >
                                     Enviar
                                 </Button>
